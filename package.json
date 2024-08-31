@@ -1,0 +1,24 @@
+{
+  "name": "neon-serverless-starter",
+  "scripts": {
+    "env": "dotenv -e .dev.vars",
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.9.4",
+    "@prisma/adapter-neon": "^5.19.0",
+    "@prisma/client": "^5.19.0",
+    "@twind/core": "^1.1.3",
+    "@twind/preset-tailwind": "^1.1.4",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
+    "hono": "^4.5.9",
+    "prisma": "^5.19.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240529.0",
+    "@types/bcryptjs": "^2.4.6",
+    "wrangler": "^3.57.2"
+  }
+}
