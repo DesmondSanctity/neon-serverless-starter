@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { serveStatic } from 'hono/cloudflare-workers'
 import { prettyJSON } from 'hono/pretty-json'
+import { HtmlEscapedString } from 'hono/utils/html';
 import manifest from '__STATIC_CONTENT_MANIFEST';
 import { extract, install } from '@twind/core';
 import presetTailwind from '@twind/preset-tailwind';
@@ -16,7 +17,6 @@ import { chatHTML } from './views/chatbox';
 import { chatsHTML } from './views/chats';
 import { homeHTML } from './views/home';
 import { settingsHTML } from './views/settings';
-import { HtmlEscapedString } from 'hono/utils/html';
 
 install({
   presets: [
