@@ -1,6 +1,6 @@
 ## Fullstack Serverless Starter with Hono.js, Cloudflare Workers and Neon Postgres.
 
-This is a starter project for a fullstack serverless application using Hono.js, Cloudflare Workers and Neon Postgres. It is a simple CRUD application that allows you to create, read, update and delete posts. It also has provisions for building user interface using HTML and CSS.
+This is a starter project for a fullstack serverless application using Hono.js, Cloudflare Workers, and Neon Postgres. It is a simple CRUD application that allows you to create, read, update, and delete posts. It also has provisions for building user interfaces using HTML and CSS.
 
 ### Prerequisites
 
