@@ -6,6 +6,7 @@
     "deploy": "wrangler deploy --minify src/index.ts"
   },
   "dependencies": {
+    "@hono/zod-openapi": "^0.16.0",
     "@hono/zod-validator": "^0.2.2",
     "@neondatabase/serverless": "^0.9.4",
     "@prisma/adapter-neon": "^5.19.0",

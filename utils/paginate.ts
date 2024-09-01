@@ -32,13 +32,13 @@ const getAllWithPagination = async ({
  }
 
  const model = prisma[modelName] as any;
- const totalCount = await model.count({ where });
+ const totalCount = await model.count({ where }) as number;
  const data = await model.findMany({
   skip,
   take,
   orderBy,
   where,
- });
+ }) as any[];
 
  return { totalCount, data };
 };

@@ -16,6 +16,7 @@ import { chatHTML } from './views/chatbox';
 import { chatsHTML } from './views/chats';
 import { homeHTML } from './views/home';
 import { settingsHTML } from './views/settings';
+import { HtmlEscapedString } from 'hono/utils/html';
 
 install({
   presets: [
@@ -31,7 +32,7 @@ install({
   ],
 });
 
-async function ssrTwind(body: string) {
+async function ssrTwind(body: HtmlEscapedString | Promise<HtmlEscapedString>) {
   const { html, css } = extract((body).toString());
   return html.replace('</head>', `<style data-twind>${css}</style><head>`);
 }

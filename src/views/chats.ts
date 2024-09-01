@@ -67,6 +67,7 @@ export const chatsHTML = html`<!DOCTYPE html>
       </a>
       <button
        class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 sm:py-2 sm:px-4 rounded text-sm sm:text-base"
+       onclick="window.location.href = '/';"
       >
        Logout
       </button>
