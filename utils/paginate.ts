@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
+import prisma from '../src/configs/db';
 
 const getAllWithPagination = async ({
  modelName,

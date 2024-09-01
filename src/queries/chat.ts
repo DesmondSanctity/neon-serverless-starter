@@ -17,7 +17,7 @@ const getAll = async ({
  filterFields?: string[];
 }) => {
  return getAllWithPagination({
-  modelName: 'user',
+  modelName: 'chat',
   page,
   perPage,
   sortBy,
@@ -26,34 +26,26 @@ const getAll = async ({
   filterFields,
  });
 };
-
-const create = async (email: string, password: string) => {
- return prisma.user.create({
-  data: { email, password },
+const create = async (message: string, userId: string) => {
+ return prisma.chat.create({
+  data: { message, userId }
  });
 };
 
 const getId = async (id: string) => {
- return prisma.user.findUnique({
+ return prisma.chat.findUnique({
   where: { id },
- });
-};
-
-const getEmail = async (email: string) => {
- return prisma.user.findUnique({
-  where: { email },
  });
 };
 
 const updateId = async (id: string, data: any) => {
- return prisma.user.update({
+ return prisma.chat.update({
   where: { id },
   data,
  });
 };
-
 const deleteId = async (id: string) => {
- return prisma.user.delete({
+ return prisma.chat.delete({
   where: { id },
  });
 };
@@ -62,7 +54,6 @@ export default {
  create,
  getAll,
  getId,
- getEmail,
  updateId,
  deleteId,
 };

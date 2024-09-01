@@ -1,5 +1,7 @@
 import { Context } from 'hono';
+import { zValidator } from '@hono/zod-validator'
 import userQueries from '../queries/user';
+import { userUpdateSchema } from '../validations';
 import { logger } from '../middlewares/logger';
 
 export const getAllUsers = async (c: Context) => {
@@ -45,6 +47,12 @@ export const getUserById = async (c: Context) => {
 };
 
 export const updateUser = async (c: Context) => {
+ zValidator('json', userUpdateSchema, (result, c) => {
+  if (!result.success) {
+   return c.text('Invalid request!', 400)
+  }
+ })
+
  const { id } = c.req.param();
  const userData = c.req.json();
 
